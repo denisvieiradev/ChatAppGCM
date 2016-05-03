@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_container_left"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="left"
+    android:layout_marginRight="50dp"
+    android:background="@android:color/white"
+    android:padding="8dp">
+
+
+    <TextView
+        android:id="@+id/tv_nickname_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/colorPrimarytext"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_nickname_left"
+        android:layout_below="@+id/tv_nickname_left"
+        android:layout_marginTop="2dp"
+        android:background="@color/yellow"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/iv_read_icon_left"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@null" />
+
+        <TextView
+            android:id="@+id/tv_time_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/iv_read_icon_left"
+            android:maxLines="1"
+            android:textColor="@color/colorSecondText"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_message_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/iv_read_icon_left"
+            android:layout_below="@+id/iv_read_icon_left"
+            android:paddingTop="9dp"
+            android:textColor="@color/colorPrimarytext"
+            android:textIsSelectable="true"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

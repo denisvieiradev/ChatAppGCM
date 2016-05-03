@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">AndroidChatGCM</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="second_activity_name">SecondActivity</string>
+    <string name="third_activity_name">ThirdActivity</string>
+    <string name="fourth_activity_name">FourthActivity</string>
+    <string name="title_activity_pm__login">PM_LoginActivity</string>
+    <string name="title_activity_pm__users">PM_UsersActivity</string>
+    <string name="title_activity_pm__messages">PM_MessagesActivity</string>
+    <string name="title_activity_pm__nickname">PM_NicknameActivity</string>
+    <string name="et_login">Nickname</string>
+    <string name="mn_configurations">Configurações</string>
+    <string name="action_send">Enviar</string>
+    <string name="empty_message_list">Nenhuma mensagem trocada ainda.</string>
+    <string name="mn_logout">Sair</string>
+</resources>

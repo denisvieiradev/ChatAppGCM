@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.denisvieira.android.androidchatgcm.R;
+import com.denisvieira.android.androidchatgcm.domain.Message;
 import com.denisvieira.android.androidchatgcm.domain.User;
 import com.denisvieira.android.androidchatgcm.extra.Pref;
 
@@ -17,11 +18,12 @@ import com.denisvieira.android.androidchatgcm.extra.Pref;
  */
 public class PM_LoginActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = "LOG";
+    public static final String PREF_KEY_NICKNAME = "com.denisvieira.android.androidchatgcm.Key.Nickname";
+    public static final String PRE_KEY_ID = "com.denisvieira.android.androidchatgcm.Key.Id";
 
     private TextInputLayout tilLogin;
     private EditText etLogin;
     private User mUser;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,6 @@ public class PM_LoginActivity extends AppCompatActivity implements View.OnClickL
         btLogin.setOnClickListener(this);
     }
 
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -50,8 +51,6 @@ public class PM_LoginActivity extends AppCompatActivity implements View.OnClickL
             callNextActivity( 0 );
         }
     }
-
-
 
     private void callNextActivity(int isFirstTime){
         Bundle bundle = new Bundle();
@@ -93,4 +92,5 @@ public class PM_LoginActivity extends AppCompatActivity implements View.OnClickL
             callNextActivity( 1 );
         }
     }
+
 }

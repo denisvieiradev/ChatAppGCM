@@ -1,9 +1,12 @@
 package com.denisvieira.android.androidchatgcm.domain;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by denisvieira on 02/05/16.
  */
-public class User{
+public class User implements Parcelable {
 
     public static final String METHOD_SAVE_USER = "save-user";
 
@@ -81,35 +84,38 @@ public class User{
     }
 
 
-//    @Override
-//    public int describeContents() {
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
-//    @Override
-//    public void writeToParcel(Parcel dest, int flags) {
-//        dest.writeString(this.registrationId);
-//        dest.writeLong(this.id);
-//        dest.writeString(this.nickname);
-//        dest.writeInt(this.numberNewMessages);
-//        dest.writeByte(isTyping ? (byte) 1 : (byte) 0);
-//        dest.writeParcelable(this.notificationConf, 0);
-//    }
+    @Override
+    public void writeToParcel (Parcel dest,int flags){
+        dest.writeString(this.registrationId);
+        dest.writeLong(this.id);
+        dest.writeString(this.nickname);
+        dest.writeInt(this.numberNewMessages);
+        dest.writeByte(isTyping ? (byte) 1 : (byte) 0);
+        dest.writeParcelable(this.notificationConf, 0);
+    }
 
-//    protected User(Parcel in) {
-//        this.registrationId = in.readString();
-//        this.id = in.readLong();
-//        this.nickname = in.readString();
-//        this.numberNewMessages = in.readInt();
-//        this.isTyping = in.readByte() != 0;
-//        this.notificationConf = in.readParcelable(NotificationConf.class.getClassLoader());
-//    }
+    protected User(Parcel in) {
+        this.registrationId = in.readString();
+        this.id = in.readLong();
+        this.nickname = in.readString();
+        this.numberNewMessages = in.readInt();
+        this.isTyping = in.readByte() != 0;
+        this.notificationConf = in.readParcelable(NotificationConf.class.getClassLoader());
+    }
 
-//    public static final Creator<User> CREATOR = new Creator<User>() {
-//        public User createFromParcel(Parcel source) {
-//            return new User(source);
-//        }
-//
-//        public User[] newArray(int size) {
-//            return new User[size];
-//        }
-//    };
+    public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
+        public User createFromParcel(Parcel source) {
+            return new User(source);
+        }
+
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
+
 }

@@ -11,6 +11,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
+import com.denisvieira.android.androidchatgcm.activity.PM_UsersActivity;
 import com.denisvieira.android.androidchatgcm.domain.NotificationConf;
 import com.denisvieira.android.androidchatgcm.domain.PushMessage;
 import com.denisvieira.android.androidchatgcm.domain.User;
@@ -65,8 +66,8 @@ public class NetworkConnection {
 
     public void execute( Transaction t, String tag ){
         mTransaction = t;
-//        WrapObjToNetwork obj = t.doBefore();
-//        execute(obj, tag);
+        WrapObjToNetwork obj = t.doBefore();
+        execute(obj, tag);
     }
 
 
@@ -90,7 +91,7 @@ public class NetworkConnection {
                         Log.i(TAG, "onResponse(): " + response);
 
                         if( mTransaction != null ){
-//                            mTransaction.doAfter( response );
+                            mTransaction.doAfter( response );
                             mTransaction = null;
                         }
                         else{
@@ -98,7 +99,7 @@ public class NetworkConnection {
                             Bundle bundle = new Bundle();
                             PushMessage pushMessage = new PushMessage();
                             pushMessage.setBundle(bundle);
-//                            pushMessage.setListenerLabel(PM_UsersActivity.class.getName());
+                            pushMessage.setListenerLabel(PM_UsersActivity.class.getName());
 
                             // WHEN UPDATE NOTIFICATION CONF
                             if( obj.getMethod().equalsIgnoreCase( NotificationConf.METHOD_UPDATE ) ){
@@ -119,8 +120,8 @@ public class NetworkConnection {
                                                 .setStatus( obj.getUserFrom().getNotificationConf().getStatus() );
                                     }
 
-//                                    bundle.putParcelable(User.USER_KEY, u);
-//                                    pushMessage.setCode(PM_UsersActivity.USER_NOTIFICATION_CONF_UPDATED_CODE);
+                                    bundle.putParcelable(User.USER_KEY, u);
+                                    pushMessage.setCode(PM_UsersActivity.USER_NOTIFICATION_CONF_UPDATED_CODE);
 
                                 } catch (Exception e) {
                                     e.printStackTrace();
@@ -139,7 +140,7 @@ public class NetworkConnection {
                                 }
 
                                 bundle.putLong(User.ID_KEY, id);
-//                                pushMessage.setCode(PM_UsersActivity.USER_DATA_CODE);
+                                pushMessage.setCode(PM_UsersActivity.USER_DATA_CODE);
                             }
 
                             // SEND DATA TO ACTIVITY
@@ -151,9 +152,9 @@ public class NetworkConnection {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.i(TAG, "onErrorResponse(): " + error.getMessage());
-//                        if( mTransaction != null ){
-//                            mTransaction.doAfter( null );
-//                        }
+                        if( mTransaction != null ){
+                            mTransaction.doAfter( null );
+                        }
                     }
                 });
 

@@ -112,23 +112,23 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:theme="@style/Theme.Default"
-            android:name=".activity.PM_UsersActivity"
-            android:label="@string/title_activity_pm__users" >
-        </activity>
+        <!--<activity-->
+            <!--android:theme="@style/Theme.Default"-->
+            <!--android:name=".activity.PM_UsersActivity"-->
+            <!--android:label="@string/title_activity_pm__users" >-->
+        <!--</activity>-->
 
-        <activity
-            android:theme="@style/Theme.Default"
-            android:name=".activity.PM_MessagesActivity"
-            android:label="@string/title_activity_pm__messages">
-        </activity>
+        <!--<activity-->
+            <!--android:theme="@style/Theme.Default"-->
+            <!--android:name=".activity.PM_MessagesActivity"-->
+            <!--android:label="@string/title_activity_pm__messages">-->
+        <!--</activity>-->
 
-        <activity
-            android:theme="@style/Theme.Default"
-            android:name=".activity.PM_NicknameActivity"
-            android:label="@string/title_activity_pm__nickname" >
-        </activity>
+        <!--<activity-->
+            <!--android:theme="@style/Theme.Default"-->
+            <!--android:name=".activity.PM_NicknameActivity"-->
+            <!--android:label="@string/title_activity_pm__nickname" >-->
+        <!--</activity>-->
 
 
     </application>
